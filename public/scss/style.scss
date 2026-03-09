@@ -10,6 +10,9 @@ $black: #000000;
 $primary: #dbcc8f;
 
 
+
+
+
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
      -moz-border-radius: $radius;
@@ -29,6 +32,75 @@ $primary: #dbcc8f;
 // html {
 // 	// overflow-x: hidden;
 // }
+
+// Force navbar to always stay dark with white text
+nav.navbar,
+nav#ftco-navbar,
+.ftco_navbar,
+.navbar-dark {
+    background-color: #1a1a1a !important;
+    background: #1a1a1a !important;
+    
+    // All text elements white
+    a.navbar-brand,
+    a.nav-link,
+    .navbar-toggler,
+    .nav-item a,
+    li a {
+        color: white !important;
+    }
+    
+    // Dropdown button
+    .dropdown {
+        .btn,
+        button {
+            color: white !important;
+            background-color: #1a1a1a !important;
+            border-color: #333 !important;
+        }
+    }
+    
+    // When scrolled
+    &.scrolled,
+    &.awake,
+    &.sleep {
+        background-color: #1a1a1a !important;
+        background: #1a1a1a !important;
+        
+        a.navbar-brand,
+        a.nav-link,
+        .navbar-toggler,
+        .dropdown .btn,
+        .dropdown button {
+            color: white !important;
+        }
+    }
+}
+
+// Dropdown menu items
+.dropdown-menu {
+    .dropdown-item {
+        color: #333 !important;
+        
+        &:hover,
+        &:focus {
+            color: white !important;
+            background-color: #dbcc8f !important;
+        }
+    }
+}
+
+// Shopping cart icon
+.icon-shopping_cart {
+    color: white !important;
+}
+
+// Active nav item
+.nav-item.active {
+    .nav-link {
+        color: white !important;
+    }
+}
 body {
 	font-family: $font-primary;
 	background: $white;

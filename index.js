@@ -1,5 +1,7 @@
 const mongoose = require("mongoose")
 require('dotenv').config()
+const dns = require('node:dns');           // or "dns/promises" in newer style
+dns.setServers(['1.1.1.1', '1.0.0.1', '8.8.8.8']);
 mongoose.connect(process.env.MONGODB_IDPASS).then(() => {
   console.log("db c");
 })

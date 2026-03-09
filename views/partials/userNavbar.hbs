@@ -13,7 +13,7 @@
 					    </div>
 					    <div class="col-md pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-						    <span class="text">minishop@email.com</span>
+						    <span class="text">rcforge@email.com</span>
 					    </div>
 					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">3-5 Business days delivery &amp; Free Returns</span>
@@ -23,46 +23,62 @@
 		    </div>
 		  </div>
 </div>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="/">Minishop</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="color: white;">
+    <div class="container">
+      <a class="navbar-brand" href="/" style="color: white !important;">RC-FORGE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" style="color: white;">
+        <span class="oi oi-menu"></span> Menu
+      </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active "><a href="/" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="/shop" class="nav-link">Shop</a></li>
-	          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
-	          <li class="nav-item"><a href="/wishlist" class="nav-link">Wishlist</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart" class="nav-link"><span class="icon-shopping_cart"></span>[{{cartCount}}]</a></li>
-				{{#if username}}
-			   <div class="dropdown mt-2 btn-lg">
-					<button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						{{username}}
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="/userprofile">Profile</a>
-						<a class="dropdown-item" href="/logout">LogOut</a>
-  					</div>
-				</div>
-				{{else}}
-				<div class="dropdown  mt-2 btn-lg">
-					<button class="btn  btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Guest
-					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a class="dropdown-item" href="/register">SignUp</a>
-  					</div>
-				</div>
-				{{/if}}
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="/" class="nav-link" style="color: white !important;">Home</a></li>
+          <li class="nav-item"><a href="/shop" class="nav-link" style="color: white !important;">Shop</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link" style="color: white !important;">About</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link" style="color: white !important;">Contact</a></li>
+          <li class="nav-item"><a href="/wishlist" class="nav-link" style="color: white !important;">Wishlist</a></li>
+          <li class="nav-item cta cta-colored"><a href="cart" class="nav-link" style="color: white !important;"><span class="icon-shopping_cart"></span>[{{cartCount}}]</a></li>
+        {{#if username}}
+       <div class="dropdown mt-2 btn-lg">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white !important;">
+                {{username}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/userprofile">Profile</a>
+                <a class="dropdown-item" href="/logout">LogOut</a>
+            </div>
+        </div>
+        {{else}}
+        <div class="dropdown mt-2 btn-lg">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white !important;">
+                Guest
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="/register">SignUp</a>
+            </div>
+        </div>
+        {{/if}}
+        </ul>
+      </div>
+    </div>
+</nav>
 
-
-
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('ftco-navbar');
     
+    // Force styles on load
+    navbar.style.backgroundColor = '#1a1a1a';
+    
+    // Keep checking and forcing dark background
+    window.addEventListener('scroll', function() {
+        navbar.style.backgroundColor = '#1a1a1a';
+        
+        // Force all text white
+        const links = navbar.querySelectorAll('.nav-link, .navbar-brand, .dropdown button');
+        links.forEach(link => {
+            link.style.color = 'white';
+        });
+    });
+});
+</script>
